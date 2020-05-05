@@ -15,6 +15,7 @@ import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {AuthContext} from '../../../components/context';
+import {Fonts} from "../../../themes";
 
 export function DrawerContent(props) {
   const [isDarkTheme, setIsDarkTheme] = React.useState(false);
@@ -39,6 +40,8 @@ export function DrawerContent(props) {
                 size={50}
               />
               <View style={{marginLeft: 15, flexDirection: 'column'}}>
+                <Text style={{fontFamily:Fonts.type.bold}}> KERİMDEMİR 1  </Text>
+                <Text style={{fontFamily:Fonts.type.base}}> KERİMDEMİR 2 </Text>
                 <Title style={styles.title}>Pradip Debnath</Title>
                 <Caption style={styles.caption}>@itzpradip</Caption>
               </View>

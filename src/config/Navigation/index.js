@@ -9,7 +9,7 @@
 import React, {useEffect} from 'react';
 import {View, ActivityIndicator} from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage';
-
+import RNBootSplash from "react-native-bootsplash";
 import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {DrawerContent} from './Drawer/DrawerContent';
@@ -155,16 +155,19 @@ const Navigation = () => {
   }, []);
 
   if (loginState.isLoading) {
+
+    RNBootSplash.hide({duration: 3000});
     return (
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <ActivityIndicator size="large" />
       </View>
     );
   }
+
   return (
     <AuthContext.Provider value={authContext}>
       <NavigationContainer>
-        {loginState.userToken == null ? (
+        {loginState.userToken !== null ? (
           <Drawer.Navigator
             drawerContent={(props) => <DrawerContent {...props} />}>
             <Drawer.Screen name="HomeDrawer" component={MainTabScreen} />

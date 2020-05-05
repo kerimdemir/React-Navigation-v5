@@ -5,14 +5,29 @@ const {width, height} = Dimensions.get('window');
 const guidelineBaseWidth = 350;
 const guidelineBaseHeight = 680;
 
-const scale = size => (width / guidelineBaseWidth) * size;
-const verticalScale = size => (height / guidelineBaseHeight) * size;
+const scale = (size) => (width / guidelineBaseWidth) * size;
+const verticalScale = (size) => (height / guidelineBaseHeight) * size;
 const moderateScale = (size, factor = 0.5) =>
   size + (scale(size) - size) * factor;
 
 const type = {
-  base: 'Helvetica',
-  bold: 'Helvetica',
+  bold: 'Poppins-Bold',
+  black: 'Poppins-Black.ttf',
+  blackItalic: 'Poppins-BlackItalic.ttf',
+  boldItalic: 'Poppins-BoldItalic.ttf',
+  extraBold: 'Poppins-ExtraBold.ttf',
+  extraBoldItalic: 'Poppins-ExtraBoldItalic.ttf',
+  extraLight: 'Poppins-ExtraLight.ttf',
+  extraLightItalic: 'Poppins-ExtraLightItalic.ttf',
+  italic: 'Poppins-Italic.ttf',
+  light: 'Poppins-Light.ttf',
+  lightItalic: 'Poppins-LightItalic.ttf',
+  medium: 'Poppins-Medium.ttf',
+  mediumItalic: 'Poppins-MediumItalic.ttf',
+  regular: 'Poppins-Regular.ttf',
+  semiBold: 'Poppins-SemiBold.ttf',
+  thin: 'Poppins-Thin.ttf',
+  thinItalic: 'Poppins-ThinItalic.ttf',
 };
 const size = {
   input: {fontSize: moderateScale(25), fontFamily: type.base},
